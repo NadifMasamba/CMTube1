@@ -466,10 +466,13 @@ def bot_sys_stats():
     
 𝐂𝐏𝐔: {progress_bar(cpu)} {cpu}%
 𝐑𝐀𝐌: {progress_bar(mem)} {mem}%
-
 𝐙𝐈𝐏: {progress_bar(num_archi)} {num_archi}
 𝐔𝐍𝐙𝐈𝐏: {progress_bar(num_split)} {num_extract} 
 𝗗𝗜𝗦𝗞: {progress_bar(disk)} {disk}%
+
+T: {disk_t}GB | F: {disk_f}GB
+Working For: {currentTime}
+T-DL: {recv} | T-UL: {sent}
 """
     return stats
 dispatcher.add_handler(
