@@ -183,7 +183,7 @@ def get_readable_message():
                 globals()['COUNT'] -= STATUS_LIMIT
                 globals()['PAGE_NO'] -= 1
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):
-            msg += f"<b>❖ <a href='{download.message.link}'>{download.status()}</a>: </b>"
+            msg += f"<b>╭ <a href='{download.message.link}'>{download.status()}</a>: </b>"
             msg += f"<code>{escape(str(download.name()))}</code>"
             if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_SPLITTING]:
                 if EMOJI_THEME is True:
@@ -229,7 +229,7 @@ def get_readable_message():
                         msg += f'\n<b>├👤 User:</b> ️<code>{download.message.from_user.first_name}</code> | <b>Id:</b> <code>{download.message.from_user.id}</code>'
                         msg += f"\n<b>╰❎ Cancel: </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
                     else:
-                        msg += f'\n<b>├ User:</b> ️<code>{download.message.from_user.first_name}</code> | <b>Id:</b> <code>{download.message.from_user.id}</code>'
+                        msg += f'\n<b>❖ User:</b> ️<code>{download.message.from_user.first_name}</code> | <b>Id:</b> <code>{download.message.from_user.id}</code>'
                         msg += f"\n<b>╰ Cancel: </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
 
             elif download.status() == MirrorStatus.STATUS_SEEDING:
@@ -470,7 +470,6 @@ def bot_sys_stats():
 𝐙𝐈𝐏: {progress_bar(num_archi)} {num_archi}
 𝐔𝐍𝐙𝐈𝐏: {progress_bar(num_split)} {num_extract} 
 𝗗𝗜𝗦𝗞: {progress_bar(disk)} {disk}%
-𝗧: {progress_bar(disk_t)} {disk_t} | 𝗙: {progress_bar(disk_f)} {disk_f}
 """
     return stats
 dispatcher.add_handler(
