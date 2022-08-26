@@ -159,8 +159,8 @@ def get_progress_bar_string(status):
 
 
 def progress_bar(percentage):
-    p_used = '🟩'
-    p_total = '⬜️'
+    p_used = '⬢'
+    p_total = '⬡'
     if isinstance(percentage, str):
         return 'NaN'
     try:
@@ -168,7 +168,7 @@ def progress_bar(percentage):
     except:
         percentage = 0
     return ''.join(
-        p_used if i <= percentage // 8 else p_total for i in range(1, 11)
+        p_used if i <= percentage // 10 else p_total for i in range(1, 11)
     )
 
 
