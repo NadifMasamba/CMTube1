@@ -68,12 +68,12 @@ def getHerokuDetails(h_api_key, h_app_name):
             abc += f"<b>├ 👎🏻 USED</b>: {get_readable_time(quota_used)}\n"
             abc += f"<b>├ 👍🏻 FREE</b>: {get_readable_time(quota_remain)}\n"
         else:
-            abc += f'<b></b>\n'
-            abc += f'<b>╭─《 HEROKU STATS 》</b>\n'
-            abc += f'<b>│</b>\n'
-            abc += f"<b>├ FULL</b>: {get_readable_time(account_quota)}\n"
-            abc += f"<b>├ USED</b>: {get_readable_time(quota_used)}\n"
-            abc += f"<b>├ FREE</b>: {get_readable_time(quota_remain)}\n"
+            bc += f'<b></b>\n'
+            abc += f'<b>❖ HEROKU STATS ❖</b>\n'
+            abc += f'<b>❖</b>\n'
+            abc += f"<b>❖ FULL</b>: {get_readable_time(account_quota)}\n"
+            abc += f"<b>❖ USED</b>: {get_readable_time(quota_used)}\n"
+            abc += f"<b>❖ FREE</b>: {get_readable_time(quota_remain)}\n"
         # App Quota
         AppQuotaUsed = 0
         OtherAppsUsage = 0
@@ -99,10 +99,10 @@ def getHerokuDetails(h_api_key, h_app_name):
             abc += f'<b>│</b>\n'
             abc += f'<b>╰─《 ☣️ {CREDIT_NAME} ☣️ 》</b>'
         else:
-            abc += f"<b>├ APP USAGE:</b> {get_readable_time(AppQuotaUsed)}\n"
-            abc += f"<b>├ OTHER APP:</b> {get_readable_time(OtherAppsUsage)}\n"
-            abc += f'<b>│</b>\n'
-            abc += f'<b>╰─《 {CREDIT_NAME} 》</b>'
+            abc += f"<b>❖ APP USAGE:</b> {get_readable_time(AppQuotaUsed)}\n"
+            abc += f"<b>❖ OTHER APP:</b> {get_readable_time(OtherAppsUsage)}\n"
+            abc += f'<b>❖</b>\n'
+            abc += f'<b>❖《 {CREDIT_NAME} 》</b>'
         return abc
     except Exception as g:
         LOGGER.error(g)
@@ -110,7 +110,7 @@ def getHerokuDetails(h_api_key, h_app_name):
 
 
 
-IMAGE_X = "https://graph.org/file/9c2c7250397f4ed2eed20.jpg"
+IMAGE_X = "https://telegra.ph/file/5793f76d2f83ccb69991c.jpg"
 
 now=datetime.now(pytz.timezone(f'{TIMEZONE}'))
 
@@ -165,27 +165,27 @@ def stats(update, context):
                     f'<b>├ 💃 𝙵𝚁𝙴𝙴 𝙾𝙵 𝙼𝙴𝙼𝙾𝚁𝚈:</b> {mem_a}\n'\
                     f'<b>╰ 👰 𝚄𝚂𝙰𝙶𝙴 𝙾𝙵 𝙼𝙴𝙼𝙾𝚁𝚈:</b> {mem_u}\n'
     else:
-            stats = f'<b>╭─《 BOT STATISTICS 》</b>\n' \
-                    f'<b>│</b>\n' \
-                    f'<b>├  𝙲𝙾𝙼𝙼𝙸𝚃 𝙳𝙰𝚃𝙴:</b> {last_commit}\n'\
-                    f'<b>├  𝙾𝙽𝙻𝙸𝙽𝙴 𝚃𝙸𝙼𝙴:</b> {currentTime}\n'\
-                    f'<b>├  Sᴛᴀʀᴛᴇᴅ Aᴛ:</b> {current}\n'\
-                    f'<b>├  𝙾𝚂 𝚄𝙿𝚃𝙸𝙼𝙴:</b> {osUptime}\n'\
-                    f'<b>├  𝙳𝙸𝚂𝙺 𝚂𝙿𝙰𝙲𝙴:</b> {total}\n'\
-                    f'<b>├  𝙳𝙸𝚂𝙺 𝚂𝙿𝙰𝙲𝙴 𝚄𝚂𝙴𝙳:</b> {used}\n'\
-                    f'<b>├  𝙳𝙸𝚂𝙺 𝚂𝙿𝙰𝙲𝙴 𝙵𝚁𝙴𝙴:</b> {free}\n'\
-                    f'<b>├  𝚄𝙿𝙻𝙾𝙰𝙳 𝙳𝙰𝚃𝙰:</b> {sent}\n'\
-                    f'<b>├  𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳 𝙳𝙰𝚃𝙰:</b> {recv}\n'\
-                    f'<b>├  𝙲𝙿𝚄 𝚄𝚂𝙰𝙶𝙴:</b> {cpuUsage}%\n'\
-                    f'<b>├  𝚁𝙰𝙼:</b> {mem_p}%\n'\
-                    f'<b>├  𝙳𝙸𝚂𝙺 𝚄𝚂𝙴𝙳:</b> {disk}%\n'\
-                    f'<b>├  𝙿𝙷𝚈𝚂𝙸𝙲𝙰𝙻 𝙲𝙾𝚁𝙴𝚂:</b> {p_core}\n'\
-                    f'<b>├  𝚃𝙾𝚃𝙰𝙻 𝙲𝙾𝚁𝙴𝚂:</b> {t_core}\n'\
-                    f'<b>├  𝚂𝚆𝙰𝙿:</b> {swap_t}\n'\
-                    f'<b>├  𝚂𝚆𝙰𝙿 𝚄𝚂𝙴𝙳:</b> {swap_p}%\n'\
-                    f'<b>├  𝚃𝙾𝚃𝙰𝙻 𝙾𝙵 𝙼𝙴𝙼𝙾𝚁𝚈:</b> {mem_t}\n'\
-                    f'<b>├  𝙵𝚁𝙴𝙴 𝙾𝙵 𝙼𝙴𝙼𝙾𝚁𝚈:</b> {mem_a}\n'\
-                    f'<b>╰  𝚄𝚂𝙰𝙶𝙴 𝙾𝙵 𝙼𝙴𝙼𝙾𝚁𝚈:</b> {mem_u}\n'
+            stats = f'<b>❖ BOT STATISTICS ❖</b>\n' \
+                    f'<b></b>\n' \
+                    f'<b>❖  𝙲𝙾𝙼𝙼𝙸𝚃 𝙳𝙰𝚃𝙴:</b> {last_commit}\n'\
+                    f'<b>❖  𝙾𝙽𝙻𝙸𝙽𝙴 𝚃𝙸𝙼𝙴:</b> {currentTime}\n'\
+                    f'<b>❖  Sᴛᴀʀᴛᴇᴅ Aᴛ:</b> {current}\n'\
+                    f'<b>❖  𝙾𝚂 𝚄𝙿𝚃𝙸𝙼𝙴:</b> {osUptime}\n'\
+                    f'<b>❖  𝙳𝙸𝚂𝙺 𝚂𝙿𝙰𝙲𝙴:</b> {total}\n'\
+                    f'<b>❖  𝙳𝙸𝚂𝙺 𝚂𝙿𝙰𝙲𝙴 𝚄𝚂𝙴𝙳:</b> {used}\n'\
+                    f'<b>❖  𝙳𝙸𝚂𝙺 𝚂𝙿𝙰𝙲𝙴 𝙵𝚁𝙴𝙴:</b> {free}\n'\
+                    f'<b>❖  𝚄𝙿𝙻𝙾𝙰𝙳 𝙳𝙰𝚃𝙰:</b> {sent}\n'\
+                    f'<b>❖  𝙳𝙾𝚆𝙽𝙻𝙾𝙰𝙳 𝙳𝙰𝚃𝙰:</b> {recv}\n'\
+                    f'<b>❖  𝙲𝙿𝚄 𝚄𝚂𝙰𝙶𝙴:</b> {cpuUsage}%\n'\
+                    f'<b>❖  𝚁𝙰𝙼:</b> {mem_p}%\n'\
+                    f'<b>❖  𝙳𝙸𝚂𝙺 𝚄𝚂𝙴𝙳:</b> {disk}%\n'\
+                    f'<b>❖  𝙿𝙷𝚈𝚂𝙸𝙲𝙰𝙻 𝙲𝙾𝚁𝙴𝚂:</b> {p_core}\n'\
+                    f'<b>❖  𝚃𝙾𝚃𝙰𝙻 𝙲𝙾𝚁𝙴𝚂:</b> {t_core}\n'\
+                    f'<b>❖  𝚂𝚆𝙰𝙿:</b> {swap_t}\n'\
+                    f'<b>❖  𝚂𝚆𝙰𝙿 𝚄𝚂𝙴𝙳:</b> {swap_p}%\n'\
+                    f'<b>❖  𝚃𝙾𝚃𝙰𝙻 𝙾𝙵 𝙼𝙴𝙼𝙾𝚁𝚈:</b> {mem_t}\n'\
+                    f'<b>❖  𝙵𝚁𝙴𝙴 𝙾𝙵 𝙼𝙴𝙼𝙾𝚁𝚈:</b> {mem_a}\n'\
+                    f'<b>❖  𝚄𝚂𝙰𝙶𝙴 𝙾𝙵 𝙼𝙴𝙼𝙾𝚁𝚈:</b> {mem_u}\n'
 
                 
 
@@ -488,7 +488,7 @@ def main():
     elif not notifier_dict and AUTHORIZED_CHATS:
         for id_ in AUTHORIZED_CHATS:
             try:
-                bot.sendMessage(id_, "Bot Restarted!", 'HTML')
+                bot.sendMessage(id_, "🅑🅞🅣 🅒🅜🅣 🅡🅔🅢🅣🅐🅡🅣🅔🅓❗", 'HTML')
             except Exception as e:
                 LOGGER.error(e)
 
