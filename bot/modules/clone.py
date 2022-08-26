@@ -29,7 +29,7 @@ def _clone(message, bot):
             if EMOJI_THEME is True:
                 warnmsg = f'<b>❗ This message will be deleted in <i>{auto_delete_message} minutes</i> from this group.</b>\n'
             else:
-                warnmsg = f'<b>This message will be deleted in <i>{auto_delete_message} minutes</i> from this group.</b>\n'
+                warnmsg = f'<b>🪫 This message will automatically be deleted in <i>{auto_delete_message} minutes</i> from Group CMT Klub.</b>\n'
     else:
         warnmsg = ''
     if BOT_PM and message.chat.type != 'private':
@@ -45,7 +45,7 @@ def _clone(message, bot):
         if EMOJI_THEME is True:
             logwarn = f"<b>⚠️ I have sent files in Mirror Log Channel.(Join Mirror Log channel) </b>\n"
         else:
-            logwarn = f"<b>I have sent files in Mirror Log Channel.(Join Mirror Log channel) </b>\n"
+            logwarn = f"<b>Please join to take the file at <a href=\"{MIRROR_LOG_URL}\">🔦 Click Here</a> </b>\n"
     elif message.chat.type == 'private':
         logwarn = ''
     else:
@@ -62,7 +62,7 @@ def _clone(message, bot):
                     uname = f'<a href="tg://user?id={message.from_user.id}">{message.from_user.first_name}</a>'
                 buttons = ButtonMaker()
                 chat_u = CHANNEL_USERNAME.replace("@", "")
-                buttons.buildbutton("👉🏻 CHANNEL LINK 👈🏻", f"https://t.me/{chat_u}")
+                buttons.buildbutton("👁‍🗨 CHANNEL LINK 👁‍🗨", f"https://t.me/{chat_u}")
                 help_msg = f"Dᴇᴀʀ {uname},\nYᴏᴜ ɴᴇᴇᴅ ᴛᴏ ᴊᴏɪɴ ᴍʏ Cʜᴀɴɴᴇʟ ᴛᴏ ᴜsᴇ Bᴏᴛ \n\nCʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴇʟᴏᴡ Bᴜᴛᴛᴏɴ ᴛᴏ ᴊᴏɪɴ ᴍʏ Cʜᴀɴɴᴇʟ."
                 reply_message = sendMarkup(help_msg, bot, message, InlineKeyboardMarkup(buttons.build_menu(2)))
                 Thread(target=auto_delete_message, args=(bot, message, reply_message)).start()
