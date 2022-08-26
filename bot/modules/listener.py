@@ -296,7 +296,7 @@ class MirrorLeechListener:
         if EMOJI_THEME is True:
             msg = f"<b>╭🗂️ Name: </b><code>{escape(name)}</code>\n<b>├📐 Size: </b>{size}"
         else:
-            msg = f"<b>❖ Name: </b><code>{escape(name)}</code>\n<b>├ Size: </b>{size}"
+            msg = f"<b>❖ Name: </b><code>{escape(name)}</code>\n<b>❖ Size: </b>{size}"
         if self.isLeech:
             if SOURCE_LINK is True:
                 try:
