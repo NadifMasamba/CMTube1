@@ -183,8 +183,8 @@ def get_readable_message():
                 globals()['COUNT'] -= STATUS_LIMIT
                 globals()['PAGE_NO'] -= 1
         for index, download in enumerate(list(download_dict.values())[COUNT:], start=1):                  
-            msg += f"\n\n<b>╭ </b> <code>{download.status()}</code>"
             msg += f"<code>{escape(str(download.name()))}</code>"
+            msg += f"\n\n<b>╭ </b> <code>{download.status()}</code>"            
             if download.status() not in [MirrorStatus.STATUS_SEEDING, MirrorStatus.STATUS_SPLITTING]:
                 if EMOJI_THEME is True:
                     msg += f"\n<b>├</b>{get_progress_bar_string(download)} {download.progress()}"
