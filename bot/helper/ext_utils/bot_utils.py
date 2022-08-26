@@ -472,7 +472,6 @@ def bot_sys_stats():
 𝗗𝗜𝗦𝗞: {progress_bar(disk)} {disk}%
 
 T: {disk_t}GB | F: {disk_f}GB
-Working For: {currentTime}
 T-DL: {recv} | T-UL: {sent}
 """
     return stats
