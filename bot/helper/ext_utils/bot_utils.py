@@ -466,7 +466,7 @@ def bot_sys_stats():
     
 𝐂𝐏𝐔: {progress_bar(cpu)} {cpu}%
 𝐑𝐀𝐌: {progress_bar(mem)} {mem}%
-𝐒𝐏𝐋𝐈𝐓: {progress_bar(num_split)} {num_split} 
+
 𝐙𝐈𝐏: {progress_bar(num_archi)} {num_archi}
 𝐔𝐍𝐙𝐈𝐏: {progress_bar(num_split)} {num_extract} 
 𝗗𝗜𝗦𝗞: {progress_bar(disk)} {disk}%
