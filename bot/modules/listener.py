@@ -261,7 +261,7 @@ class MirrorLeechListener:
                 if EMOJI_THEME is True:
                     warnmsg = f'<b>❗ This message will be deleted in <i>{auto_delete_message} minutes</i> from this group.</b>\n'
                 else:
-                    warnmsg = f'<b>🪫 This message will automatically be deleted in <i>{auto_delete_message} minutes</i> from Group CMT Klub.</b>\n'
+                    warnmsg = f'<b>🪫 This message will automatically be deleted in <i>{auto_delete_message} minutes</i> from Pea Masamba Group.</b>\n'
         else:
             warnmsg = ''
         if BOT_PM and self.message.chat.type != 'private':
@@ -277,7 +277,7 @@ class MirrorLeechListener:
             if EMOJI_THEME is True:
                 logwarn = f"<b>🔦 I have sent files in Mirror Log Channel. Join <a href=\"{MIRROR_LOG_URL}\">Mirror Log channel</a> </b>\n"
             else:
-                logwarn = f"<b>Please join to take the file at <a href=\"{MIRROR_LOG_URL}\">🔦 Click Here</a> </b>\n"
+                logwarn = f"<b>Please join to take the file at <a href=\"{MIRROR_LOG_URL}\">⏩ Click Here</a> </b>\n"
         elif self.message.chat.type == 'private':
             logwarn = ''
         else:
@@ -286,7 +286,7 @@ class MirrorLeechListener:
             if EMOJI_THEME is True:
                 logleechwarn = f"<b>🔦 I have sent files in Leech Log Channel. Join <a href=\"{LEECH_LOG_URL}\">Click Here</a> </b>\n"
             else:
-                logleechwarn = f"<b>Please join to take the file at <a href=\"{LEECH_LOG_URL}\">🔦 Click Here</a> </b>\n"
+                logleechwarn = f"<b>Please join to take the file at <a href=\"{LEECH_LOG_URL}\">⏩ Click Here</a> </b>\n"
         elif self.message.chat.type == 'private':
             logleechwarn = ''
         else:
