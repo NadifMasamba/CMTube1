@@ -60,7 +60,7 @@ def status_pages(update, context):
             delete_all_messages()
             query.answer()
         else:
-            query.answer(text=f"{user_name}, You Don't Have Rights To Close This!", show_alert=True)
+            query.answer(text=f"{user_name}, Pea Masamba was the one who could!", show_alert=True)
     if data[1] == "pre" or "nex":
         done = turn(data)
     if done:
